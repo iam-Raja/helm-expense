@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: backend
   # these labels belongs to replicaset resource
-  namespace: expense
+  #namespace: expense
   labels:
     tier: app
     component: backend
