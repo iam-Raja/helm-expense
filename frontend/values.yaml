@@ -1,0 +1,3 @@
+deployment:
+ replicas: 2
+ imageversion: iamraja/frontend:v1.0
