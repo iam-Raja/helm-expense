@@ -1,0 +1,5 @@
+deployment:
+ replicas: 2
+ imageversion: iamraja/backend:v1.0
+configmap: 
+ host :  DB_HOST
