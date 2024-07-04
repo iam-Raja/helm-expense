@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+  # these labels belongs to replicaset resource
+  labels:
+    tier: db
+    component: mysql
+    project: expense
+spec:
+  # modify replicas according to your case
+  replicas: {{ .Values.deployment.replicas }}
+  selector:
+    matchLabels:
+      tier: db
+      component: mysql
+      project: expense
+  # below is pod definition    
+  template:
+    metadata:
+    # these labels belongs to pod
+      labels:
+        tier: db
+        component: mysql
+        project: expense
+    spec:
+      containers:
+      - name: nginx
+        image: {{ .Values.deployment.imageversion }}
+
+
+
