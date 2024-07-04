@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-lb
+spec:
+  type: LoadBalancer
+  selector:
+      tier: frontend
+      component: web
+  ports:
+    - protocol: TCP
+      port: 80 #service-port
+      targetPort: 9376 #targetport
+      nodeport: 32760 # Fixing the nodeport or else k8's alloacte random
